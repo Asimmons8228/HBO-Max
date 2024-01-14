@@ -1,3 +1,5 @@
+import Account from "../Account/Account";
+
 const Header = (props) =>{
     return(
         <header className="top-header">
@@ -14,6 +16,7 @@ const Header = (props) =>{
                 <img className="top-header__user-img" src="https://mighty.tools/mockmind-api/content/human/46.jpg" width={60}/>
                 <div className="top-header__user-name">Rajiv</div>
             </div>
+            <Account />
         </header>
     )
 }
