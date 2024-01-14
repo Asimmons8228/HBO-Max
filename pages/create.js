@@ -1,11 +1,14 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
+import { useStateContext } from '@/components/HBOprovider'
 
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function CreateUser() {
+  const globalState = useStateContext();
+  console.log(globalState)
   return (
     <div>
       <div className='create-user'>
@@ -16,10 +19,10 @@ export default function CreateUser() {
           </span>
         </div>
         <div className='create-user__form'>
-            <img className='create-user__user-img' src='https://mighty.tools/mockmind-api/content/human/46.jpg' width={200} />
+            <img className='create-user__user-img' src={globalState.defaultUserImg} width={200} />
             <div className='create-user__input-group'>
                 <label>Name</label>
-                <input type='text' className='create-user__inputText'/>
+                <input value={globalState.user} onChange={globalState.createUserAction} type='text' className='create-user__inputText'/>
                 <div className='create-user__colors'>
                     <div className='create-user__color create-user__color--active' style={{background: 'rgb(2, 27, 64)', background:'linear-gradient(135deg, rgba(2,27,64,1) 11%, rgba(119,30,135,1)100%)'}}/>
                     <div className='create-user__color' style={{background: 'rgb(34,193,195)', background: 'linear-gradient(135deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%)'}}/>
