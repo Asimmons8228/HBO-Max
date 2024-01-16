@@ -8,7 +8,7 @@ const SearchModal = (props) =>{
         return thumbnails;
     }
     return(
-        <div className="search-modal search-modal--active">
+        <div className="search-modal">
             <div className="search-modal__input-group">
                 <input className="search-modal__input" type="text" placeholder="Search for a title" value="" />
                 <div className="search-modal__close-btn">

@@ -11,13 +11,15 @@ import PosterView from '@/components/UI/PosterView/PosterView'
 
 const inter = Inter({ subsets: ['latin'] })
 
-export default function CreateUser() {
+export default function Home() {
   return (
+    <>
     <MainLayout>
         <FeaturedMedia />
         <ForYouList/>
         <JustAdded />
         <PosterView />
     </MainLayout>
+    </>
   )
 }

@@ -9,8 +9,10 @@
     opacity: 0;
     transition: opacity .4s ease-in-out;
     z-index: 13;
+    visibility: hidden;
     &--active{
         opacity: 1;
+        visibility: visible;
     }
 
     &__close-btn{

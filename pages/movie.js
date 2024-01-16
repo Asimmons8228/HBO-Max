@@ -12,10 +12,12 @@ const inter = Inter({ subsets: ['latin'] })
 
 export default function CreateUser() {
   return (
+    <>
     <MainLayout>
         <FeaturedMedia />
         <PosterView />
         <CastInfo />
     </MainLayout>
+    </>
   )
 }
