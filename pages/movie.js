@@ -3,7 +3,7 @@ import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import MainLayout from '@/components/layouts/MainLayout'
 import FeaturedMedia from '@/components/UI/FeaturedMedia/FeaturedMedia'
-import PosterView from '@/components/UI/PosterView/PosterView'
+import MediaRow from '@/components/UI/MediaRow/MediaRow'
 import CastInfo from '@/components/UI/CastInfo/CastInfo'
 
 
@@ -15,7 +15,7 @@ export default function CreateUser() {
     <>
     <MainLayout>
         <FeaturedMedia />
-        <PosterView />
+        <MediaRow title="More like this" type="small-v" />
         <CastInfo />
     </MainLayout>
     </>

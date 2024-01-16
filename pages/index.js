@@ -7,10 +7,8 @@ import Login from '@/components/UI/Login/Login'
 import { useRouter } from 'next/router'
 import MainLayout from '@/components/layouts/MainLayout'
 import FeaturedMedia from '@/components/UI/FeaturedMedia/FeaturedMedia'
-import ForYouList from '@/components/UI/ForYouList/ForYouList'
-import JustAdded from '@/components/UI/JustAdded/JustAdded'
-import PosterView from '@/components/UI/PosterView/PosterView'
 import AuthCheck from '@/components/AuthCheck'
+import MediaRow from '@/components/UI/MediaRow/MediaRow'
 
 
 
@@ -27,9 +25,11 @@ export default function Index() {
     <>
     <MainLayout>
         <FeaturedMedia />
-        <ForYouList/>
-        <JustAdded />
-        <PosterView />
+        <MediaRow title="Movies" type="large-v"/>
+        <MediaRow title="Series" type="small-h" />
+        <MediaRow title="Action" type="small-v" />
+        <MediaRow title="Horror" type="large-h" />
+        <MediaRow title="SciFi" type="small-v" />
     </MainLayout>
     </>
   )

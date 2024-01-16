@@ -4,12 +4,10 @@
 @use '../components/UI/Header/header';
 @use '../components/UI/SideNav/side-nav';
 @use '../components/UI/FeaturedMedia/featuredmedia';
-@use '../components/UI/ForYouList/foryoulist';
-@use '../components/UI/JustAdded/justadded';
-@use '../components/UI/PosterView/posterview';
 @use '../components/UI/CastInfo/castinfo';
 @use '../components/UI/Account/account';
 @use '../components/UI/SearchModal/searchmodal';
+@use '../components/UI/MediaRow/mediarow';
 
 h1{
     font-size: 3rem;

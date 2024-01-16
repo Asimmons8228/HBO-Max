@@ -16,9 +16,6 @@ export default function Home() {
     <>
     <MainLayout>
         <FeaturedMedia />
-        <ForYouList/>
-        <JustAdded />
-        <PosterView />
     </MainLayout>
     </>
   )
