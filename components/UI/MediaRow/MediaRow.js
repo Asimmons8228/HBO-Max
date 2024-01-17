@@ -38,11 +38,10 @@ const MediaRow = (props) => {
     return loadingData
       ? loopComp(<Skeleton />, 10)
       : movies.map((movie) => {
-          return <Thumbnail movieData={movie} type={type} />;
+          return <Thumbnail movieData={movie} type={type} mediaType={props.mediaType} />;
         });
   };
 
-  
   return (
     <div className={`media-row ${props.type}`}>
       <h3 className="media-row__title">{props.title}</h3>
@@ -52,30 +51,32 @@ const MediaRow = (props) => {
 };
 
 const Thumbnail = (props) => {
-    const thumbSize = (type) => {
-    if (props.type === 'large-v'){
-        return '400';
+  const thumbSize = (type) => {
+    if (props.type === "large-v") {
+      return "400";
     }
-    if (props.type === 'small-v'){
-        return '185';
+    if (props.type === "small-v") {
+      return "185";
     }
-    if (props.type === 'large-h'){
-        return '500'
+    if (props.type === "large-h") {
+      return "500";
     }
-    if (props.type === 'small-h'){
-        return '342'
+    if (props.type === "small-h") {
+      return "342";
     }
-  }
+  };
   return (
-    <Link href={`/movie/${props.movieData.id}`} >
-    <div className="media-row__thumbnail">
-      <img
-        src={`https://image.tmdb.org/t/p/w${thumbSize(props.type)}/${props.movieData.poster_path}`}
-      />
-      <div className="media-row__top-player">
-        <i className="fas fa-play" />
-      </div>
-    </div>
+    <Link href={`/${props.mediaType === 'movie' ? 'movie' : 'tv'}/${props.movieData.id}`}>
+        <div className="media-row__thumbnail">
+          <img
+            src={`https://image.tmdb.org/t/p/w${thumbSize(props.type)}/${
+              props.movieData.poster_path
+            }`}
+          />
+          <div className="media-row__top-player">
+            <i className="fas fa-play" />
+          </div>
+        </div>
     </Link>
   );
 };

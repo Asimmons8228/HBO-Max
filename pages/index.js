@@ -36,6 +36,7 @@ export default function Index() {
           <MediaRow
             title="Movies"
             type="large-v"
+            mediaType='movie'
             endpoint="discover/movie?sort_by=popularity.desc&primary_release_year=2023"
           />
         </LazyLoad>
@@ -46,6 +47,7 @@ export default function Index() {
           <MediaRow
             title="Series"
             type="small-h"
+            mediaType="series"
             endpoint="discover/tv?sort_by=popularity.desc"
           />
         </LazyLoad>
@@ -56,6 +58,7 @@ export default function Index() {
           <MediaRow
             title="Action"
             type="small-v"
+            mediaType='movie'
             endpoint="discover/movie?with_genres=28&primary_release_year=2023"
           />
         </LazyLoad>
@@ -66,6 +69,7 @@ export default function Index() {
           <MediaRow
             title="Horror"
             type="large-h"
+            mediaType='movie'
             endpoint="discover/movie?with_genres=27&primary_release_year=2023"
           />
         </LazyLoad>
@@ -76,6 +80,7 @@ export default function Index() {
           <MediaRow
             title="SciFi"
             type="small-v"
+            mediaType='movie'
             endpoint="discover/movie?with_genres=878&primary_release_year=2023"
           />
         </LazyLoad>
@@ -86,6 +91,7 @@ export default function Index() {
           <MediaRow
             title="Animations"
             type="small-v"
+            mediaType='movie'
             endpoint="discover/movie?with_genres=16&primary_release_year=2023"
           />
         </LazyLoad>
