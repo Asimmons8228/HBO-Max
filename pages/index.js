@@ -9,6 +9,8 @@ import MainLayout from "@/components/layouts/MainLayout";
 import FeaturedMedia from "@/components/UI/FeaturedMedia/FeaturedMedia";
 import AuthCheck from "@/components/AuthCheck";
 import MediaRow from "@/components/UI/MediaRow/MediaRow";
+import LazyLoad from "react-lazyload";
+import Placeholder from "@/components/UI/PlaceHolder/PlaceHolder";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,39 +22,68 @@ export default function Index() {
   return AuthCheck(
     <>
       <MainLayout>
-        <FeaturedMedia />
-        <MediaRow
-          title="Movies"
-          type="large-v"
-          endpoint="discover/movie?sort_by=popularity.desc&primary_release_year=2023"
-        />
-        <MediaRow
-          title="Series"
-          type="small-h"
-          endpoint="discover/tv?sort_by=popularity.desc"
-        />
-        <MediaRow
-          title="Action"
-          type="small-v"
-          endpoint="discover/movie?with_genres=28&primary_release_year=2023"
-        />
-        <MediaRow
-          title="Horror"
-          type="large-h"
-          endpoint="discover/movie?with_genres=27&primary_release_year=2023"
-        />
-        <MediaRow
-          title="SciFi"
-          type="small-v"
-          endpoint="discover/movie?with_genres=878&primary_release_year=2023"
-        />
-        <MediaRow
-          title="Animations"
-          type="small-v"
-          endpoint="discover/movie?with_genres=16&primary_release_year=2023"
-        />
+        <FeaturedMedia videoUrl="https://www.youtube.com/embed/NYH2sLid0Zc?&autoplay=1&loop=1&start=16" title='Mortal Kombat' location="In theaters and on HBO MAX. Streaming through May 23." mediaUrl="/movies/id" />
+        <LazyLoad
+          offset={-400}
+          placeholder={<Placeholder title="Movies" type="large-v" />}
+        >
+          <MediaRow
+            title="Movies"
+            type="large-v"
+            endpoint="discover/movie?sort_by=popularity.desc&primary_release_year=2023"
+          />
+        </LazyLoad>
+        <LazyLoad
+          offset={-400}
+          placeholder={<Placeholder title="Series" type="small-h" />}
+        >
+          <MediaRow
+            title="Series"
+            type="small-h"
+            endpoint="discover/tv?sort_by=popularity.desc"
+          />
+        </LazyLoad>
+        <LazyLoad
+          offset={-400}
+          placeholder={<Placeholder title="Series" type="small-v" />}
+        >
+          <MediaRow
+            title="Action"
+            type="small-v"
+            endpoint="discover/movie?with_genres=28&primary_release_year=2023"
+          />
+        </LazyLoad>
+        <LazyLoad
+          offset={-400}
+          placeholder={<Placeholder title="Series" type="large-h" />}
+        >
+          <MediaRow
+            title="Horror"
+            type="large-h"
+            endpoint="discover/movie?with_genres=27&primary_release_year=2023"
+          />
+        </LazyLoad>
+        <LazyLoad
+          offset={-400}
+          placeholder={<Placeholder title="Series" type="small-v" />}
+        >
+          <MediaRow
+            title="SciFi"
+            type="small-v"
+            endpoint="discover/movie?with_genres=878&primary_release_year=2023"
+          />
+        </LazyLoad>
+        <LazyLoad
+          offset={-400}
+          placeholder={<Placeholder title="Series" type="small-v" />}
+        >
+          <MediaRow
+            title="Animations"
+            type="small-v"
+            endpoint="discover/movie?with_genres=16&primary_release_year=2023"
+          />
+        </LazyLoad>
       </MainLayout>
-      
     </>
   );
 }
