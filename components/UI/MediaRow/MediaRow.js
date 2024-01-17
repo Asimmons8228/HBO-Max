@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { shuffleArray } from "@/components/utilities";
+import Link from "next/link";
 
 const MediaRow = (props) => {
   const [loadingData, setLoadingData] = useState(true);
@@ -66,6 +67,7 @@ const Thumbnail = (props) => {
     }
   }
   return (
+    <Link href={`/movie/${props.movieData.id}`} >
     <div className="media-row__thumbnail">
       <img
         src={`https://image.tmdb.org/t/p/w${thumbSize(props.type)}/${props.movieData.poster_path}`}
@@ -74,6 +76,7 @@ const Thumbnail = (props) => {
         <i className="fas fa-play" />
       </div>
     </div>
+    </Link>
   );
 };
 

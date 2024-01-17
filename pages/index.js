@@ -22,7 +22,13 @@ export default function Index() {
   return AuthCheck(
     <>
       <MainLayout>
-        <FeaturedMedia videoUrl="https://www.youtube.com/embed/NYH2sLid0Zc?&autoplay=1&loop=1&start=16" title='Mortal Kombat' location="In theaters and on HBO MAX. Streaming through May 23." mediaUrl="/movies/id" />
+        <FeaturedMedia
+          mediaUrl="https://www.youtube.com/embed/UGc5Tzz19UY?&autoplay=1&loop=1&start=16"
+          title="Aquaman and the Lost Kingdom"
+          type="front"
+          location="In theaters and on HBO MAX. Streaming through May 23."
+          linkUrl="/movie/572802"
+        />
         <LazyLoad
           offset={-400}
           placeholder={<Placeholder title="Movies" type="large-v" />}
