@@ -30,7 +30,7 @@ export default function Index() {
           linkUrl="/movie/572802"
         />
         <LazyLoad
-          offset={-400}
+          offset={-200}
           placeholder={<Placeholder title="Movies" type="large-v" />}
         >
           <MediaRow
@@ -41,7 +41,7 @@ export default function Index() {
           />
         </LazyLoad>
         <LazyLoad
-          offset={-400}
+          offset={-200}
           placeholder={<Placeholder title="Series" type="small-h" />}
         >
           <MediaRow
@@ -52,7 +52,7 @@ export default function Index() {
           />
         </LazyLoad>
         <LazyLoad
-          offset={-400}
+          offset={-200}
           placeholder={<Placeholder title="Series" type="small-v" />}
         >
           <MediaRow
@@ -63,7 +63,7 @@ export default function Index() {
           />
         </LazyLoad>
         <LazyLoad
-          offset={-400}
+          offset={-200}
           placeholder={<Placeholder title="Series" type="large-h" />}
         >
           <MediaRow
@@ -74,7 +74,7 @@ export default function Index() {
           />
         </LazyLoad>
         <LazyLoad
-          offset={-400}
+          offset={-200}
           placeholder={<Placeholder title="Series" type="small-v" />}
         >
           <MediaRow
@@ -85,7 +85,7 @@ export default function Index() {
           />
         </LazyLoad>
         <LazyLoad
-          offset={-400}
+          offset={-200}
           placeholder={<Placeholder title="Series" type="small-v" />}
         >
           <MediaRow

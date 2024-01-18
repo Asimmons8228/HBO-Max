@@ -144,6 +144,8 @@
         img {
                 width: 450px;
                 height: 253px;
+                object-fit: fill;
+                scale: (1);
             }
         }
         .media-row__thumbnail-skeleton{
@@ -164,6 +166,8 @@
         img {
                 width: 700px;
                 height: 394px;
+                object-fit: fill;
+                scale: (1);
             }
         }
         .media-row__thumbnail-skeleton{
