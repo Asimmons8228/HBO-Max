@@ -1,4 +1,5 @@
 import { useStateContext } from "@/components/HBOprovider";
+import Link from "next/link";
 import { useState } from "react";
 
 const GenreNav = (props) => {
@@ -16,7 +17,9 @@ const GenreList = (props) => {
   return props.genresData.map((item) => {
     return (
       <li key={item.id}>
-        <a href={`/${props.mediaType}/genre/${item.id}`}>{item.name}</a>
+        <Link legacyBehavior={true} href={`/${props.mediaType}/genre/${item.id}`}>
+          <a>{item.name}</a>
+        </Link>
       </li>
     );
   });

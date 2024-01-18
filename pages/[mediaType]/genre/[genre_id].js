@@ -37,6 +37,7 @@ export default function MediaTypePage(props) {
             type={thumbType}
             mediaType={props.query.mediaType}
             endpoint={`discover/${props.query.mediaType}?with_genres=${props.query.genre_id}&sort_by=popularity.desc&primary_release_year=2023&page=${index + 1}`}
+            updateData={props.query.genre_id}
           />
         </LazyLoad>
         </div>

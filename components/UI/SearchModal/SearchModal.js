@@ -1,15 +1,23 @@
 import { useStateContext } from "@/components/HBOprovider";
+import { useEffect } from "react";
 
 const SearchModal = (props) => {
-  const globalState = useStateContext();
-//   const loopComp = (comp, digit) => {
-//     let thumbnails = [];
-//     for (let index = 0; index <= digit; index++) {
-//       thumbnails.push(comp);
-//     }
+  //   const loopComp = (comp, digit) => {
+  //     let thumbnails = [];
+  //     for (let index = 0; index <= digit; index++) {
+  //       thumbnails.push(comp);
+  //     }
 
-//     return thumbnails;
-//   };
+  //     return thumbnails;
+  //   };
+  const globalState = useStateContext();
+  useEffect(() => {
+    if (globalState.searchOpen) {
+      document.body.style.overflowY = "hidden";
+    } else {
+      document.body.style.overflowY = "auto";
+    }
+  }, [globalState.searchOpen]);
   return (
     <div
       className={`search-modal ${

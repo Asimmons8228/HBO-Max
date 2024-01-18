@@ -43,7 +43,7 @@ export default function SingleMediaPage(props) {
           mediaUrl={`https://image.tmdb.org/t/p/w1280${props.mediaData.backdrop_path}`}
           type="single"
           location="In theaters and on HBO MAX. Streaming through May 23."
-          linkUrl="/movie/id"
+          linkUrl={`/${props.query.mediaType}/${props.query.id}`}
         />
         <LazyLoad
           offset={-400}
@@ -54,6 +54,7 @@ export default function SingleMediaPage(props) {
             type="small-v"
             mediaType={props.query.mediaType}
             endpoint={`${props.query.mediaType === 'movie' ? 'movie' : 'tv'}/${props.query.id}/similar?`}
+            updateData={props.query.id}
           />
         </LazyLoad>
         <CastInfo mediaId={props.query.id} mediaType={props.query.mediaType} />
