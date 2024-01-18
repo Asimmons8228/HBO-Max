@@ -13,6 +13,7 @@
     &--active{
         opacity: 1;
         visibility: visible;
+        overflow: auto;
     }
 
     &__close-btn{
@@ -39,15 +40,14 @@
         border: none;
         border-bottom: 2px solid rgb(132, 0, 255);
         outline: none;
+        color: white;
     }
     &__thumbnails {
         display: flex;
-        justify-content: space-between;
         flex-flow: wrap;
         min-width: 100%;
         width: calc(100vw - 70px);
         overflow-x: scroll;
-
         &::-webkit-scrollbar {
             display: none;
         }
