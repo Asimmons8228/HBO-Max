@@ -7,7 +7,6 @@ import Login from "@/components/UI/Login/Login";
 import { useRouter } from "next/router";
 import MainLayout from "@/components/layouts/MainLayout";
 import FeaturedMedia from "@/components/UI/FeaturedMedia/FeaturedMedia";
-import AuthCheck from "@/components/AuthCheck";
 import MediaRow from "@/components/UI/MediaRow/MediaRow";
 import { Suspense } from "react";
 import Placeholder from "@/components/UI/PlaceHolder/PlaceHolder";
@@ -19,7 +18,7 @@ export default function Index() {
   const router = useRouter();
   useEffect(() => {}, []);
 
-  return AuthCheck(
+  return (
     <>
       <MainLayout>
         <FeaturedMedia
