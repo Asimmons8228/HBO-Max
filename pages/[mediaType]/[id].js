@@ -9,7 +9,6 @@ import AuthCheck from "@/components/AuthCheck";
 import { useRouter } from "next/router";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import LazyLoad from "react-lazyload";
 import Placeholder from "@/components/UI/PlaceHolder/PlaceHolder";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -47,10 +46,6 @@ export default function SingleMediaPage(props) {
           mediaType={props.query.mediaType}
           mediaId={props.query.id}
         />
-        <LazyLoad
-          offset={-400}
-          placeholder={<Placeholder title="Movies" type="large-v" />}
-        >
           <MediaRow
             title="More Like This"
             type="small-v"
@@ -58,7 +53,6 @@ export default function SingleMediaPage(props) {
             endpoint={`${props.query.mediaType === 'movie' ? 'movie' : 'tv'}/${props.query.id}/similar?`}
             updateData={props.query.id}
           />
-        </LazyLoad>
         <CastInfo mediaId={props.query.id} mediaType={props.query.mediaType} />
       </MainLayout>
     </>

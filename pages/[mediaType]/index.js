@@ -9,7 +9,6 @@ import MainLayout from "@/components/layouts/MainLayout";
 import FeaturedMedia from "@/components/UI/FeaturedMedia/FeaturedMedia";
 import AuthCheck from "@/components/AuthCheck";
 import MediaRow from "@/components/UI/MediaRow/MediaRow";
-import LazyLoad from "react-lazyload";
 import Placeholder from "@/components/UI/PlaceHolder/PlaceHolder";
 import GenreNav from "@/components/UI/GenreNav/GenreNav";
 import { shuffleArray } from "@/components/utilities";
@@ -28,17 +27,12 @@ export default function MediaTypePage(props) {
       thumbType = shuffleArray(globalState.thumbTypes)[0]
       return (
         <div key={item.id}>
-         <LazyLoad
-          offset={-200}
-          placeholder={<Placeholder title={item.name} type={thumbType} />}
-        >
           <MediaRow
             title={item.name}
             type={thumbType}
             mediaType={props.query.mediaType}
             endpoint={`discover/${props.query.mediaType}?with_genres=${item.id}&sort_by=popularity.desc&primary_release_year=2023`}
           />
-        </LazyLoad>
         </div>
       )
     })
