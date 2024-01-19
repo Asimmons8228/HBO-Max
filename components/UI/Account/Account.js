@@ -59,7 +59,7 @@ const Account = (props) =>{
                 <div className="side-nav__divider"></div>
                 <ul className="account__main">
                     <li>
-                        <a onClick={signOut} href="/">Sign Out</a>
+                        <a onClick={signOut}>Sign Out</a>
                     </li>
                 </ul>
             </div>
