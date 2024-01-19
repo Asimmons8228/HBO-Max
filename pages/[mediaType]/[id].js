@@ -8,7 +8,7 @@ import CastInfo from "@/components/UI/CastInfo/CastInfo";
 import AuthCheck from "@/components/AuthCheck";
 import { useRouter } from "next/router";
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import Placeholder from "@/components/UI/PlaceHolder/PlaceHolder";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -46,6 +46,9 @@ export default function SingleMediaPage(props) {
           mediaType={props.query.mediaType}
           mediaId={props.query.id}
         />
+        <Suspense
+          fallback={<Placeholder title="Movies" type="large-v" />}
+        >
           <MediaRow
             title="More Like This"
             type="small-v"
@@ -53,6 +56,7 @@ export default function SingleMediaPage(props) {
             endpoint={`${props.query.mediaType === 'movie' ? 'movie' : 'tv'}/${props.query.id}/similar?`}
             updateData={props.query.id}
           />
+        </Suspense>
         <CastInfo mediaId={props.query.id} mediaType={props.query.mediaType} />
       </MainLayout>
     </>

@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
-import { useEffect } from "react";
+import { Suspense, useEffect } from "react";
 import { Inter } from "next/font/google";
 import { useStateContext } from "@/components/HBOprovider";
 import Login from "@/components/UI/Login/Login";
@@ -27,12 +27,17 @@ export default function MediaTypePage(props) {
       thumbType = shuffleArray(globalState.thumbTypes)[0]
       return (
         <div key={item.id}>
+         <Suspense
+          offset={-200}
+          fallback={<Placeholder title={item.name} type={thumbType} />}
+        >
           <MediaRow
             title={item.name}
             type={thumbType}
             mediaType={props.query.mediaType}
             endpoint={`discover/${props.query.mediaType}?with_genres=${item.id}&sort_by=popularity.desc&primary_release_year=2023`}
           />
+        </Suspense>
         </div>
       )
     })

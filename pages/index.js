@@ -9,6 +9,7 @@ import MainLayout from "@/components/layouts/MainLayout";
 import FeaturedMedia from "@/components/UI/FeaturedMedia/FeaturedMedia";
 import AuthCheck from "@/components/AuthCheck";
 import MediaRow from "@/components/UI/MediaRow/MediaRow";
+import { Suspense } from "react";
 import Placeholder from "@/components/UI/PlaceHolder/PlaceHolder";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -27,45 +28,69 @@ export default function Index() {
           type="front"
           location="In theaters and on HBO MAX. Streaming through May 23."
           linkUrl="/movie/572802"
-          mediaType={'movie'}
+          mediaType='movie'
           mediaId= {572802}
         />
+        <Suspense
+          placeholder={<Placeholder title="Movies" type="large-v" />}
+        >
           <MediaRow
             title="Movies"
             type="large-v"
             mediaType='movie'
             endpoint="discover/movie?sort_by=popularity.desc&primary_release_year=2023"
           />
+        </Suspense>
+        <Suspense
+          placeholder={<Placeholder title="Series" type="small-h" />}
+        >
           <MediaRow
             title="Series"
             type="small-h"
             mediaType="series"
             endpoint="discover/tv?sort_by=popularity.desc"
           />
+        </Suspense>
+        <Suspense
+          fallback={<Placeholder title="Series" type="small-v" />}
+        >
           <MediaRow
             title="Action"
             type="small-v"
             mediaType='movie'
             endpoint="discover/movie?with_genres=28&primary_release_year=2023"
           />
+        </Suspense>
+        <Suspense
+          fallback={<Placeholder title="Series" type="large-h" />}
+        >
           <MediaRow
             title="Horror"
             type="large-h"
             mediaType='movie'
             endpoint="discover/movie?with_genres=27&primary_release_year=2023"
           />
+        </Suspense>
+        <Suspense
+          fallback={<Placeholder title="Series" type="small-v" />}
+        >
           <MediaRow
             title="SciFi"
             type="small-v"
             mediaType='movie'
             endpoint="discover/movie?with_genres=878&primary_release_year=2023"
           />
+        </Suspense>
+        <Suspense
+          fallback={<Placeholder title="Series" type="small-v" />}
+        >
           <MediaRow
             title="Animations"
             type="small-v"
             mediaType='movie'
             endpoint="discover/movie?with_genres=16&primary_release_year=2023"
           />
+        </Suspense>
       </MainLayout>
     </>
   );

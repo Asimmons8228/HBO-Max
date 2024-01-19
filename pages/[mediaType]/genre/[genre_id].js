@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
-import { useEffect } from "react";
+import { Suspense, useEffect } from "react";
 import { Inter } from "next/font/google";
 import { useStateContext } from "@/components/HBOprovider";
 import Login from "@/components/UI/Login/Login";
@@ -9,7 +9,6 @@ import MainLayout from "@/components/layouts/MainLayout";
 import FeaturedMedia from "@/components/UI/FeaturedMedia/FeaturedMedia";
 import AuthCheck from "@/components/AuthCheck";
 import MediaRow from "@/components/UI/MediaRow/MediaRow";
-import LazyLoad from "react-lazyload";
 import Placeholder from "@/components/UI/PlaceHolder/PlaceHolder";
 import GenreNav from "@/components/UI/GenreNav/GenreNav";
 import { shuffleArray } from "@/components/utilities";
@@ -28,7 +27,7 @@ export default function MediaTypePage(props) {
       thumbType = shuffleArray(globalState.thumbTypes)[0]
       return (
         <div key={item.id}>
-         <LazyLoad
+         <Suspense
           offset={-200}
           placeholder={<Placeholder title={item.name} type={thumbType} />}
         >
@@ -39,7 +38,7 @@ export default function MediaTypePage(props) {
             endpoint={`discover/${props.query.mediaType}?with_genres=${props.query.genre_id}&sort_by=popularity.desc&primary_release_year=2023&page=${index + 1}`}
             updateData={props.query.genre_id}
           />
-        </LazyLoad>
+        </Suspense>
         </div>
       )
     })
