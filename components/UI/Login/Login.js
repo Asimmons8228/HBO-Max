@@ -36,7 +36,7 @@ const Login = () => {
             return (
         
           <div onClick={() => selectUser(user.id)} className='login-user__box' key={user.id}>
-            <img className='login-user__user-img' src='https://mighty.tools/mockmind-api/content/human/46.jpg' width={200} />
+            <img className='login-user__user-img' src='https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png' width={200} />
             <div className='login-user__user-name'>{user.user}</div>
           </div>
             )

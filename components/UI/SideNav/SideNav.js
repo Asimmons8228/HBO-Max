@@ -24,7 +24,7 @@ const SideNav = (props) =>{
                 </li>
                 <li onClick={() => globalState.setSideNavOpen(false) }>
                     <Link href='/movie'>
-                        Movie
+                        Movies
                     </Link>
                 </li>
                 <li onClick={() => globalState.setSideNavOpen(false) }>

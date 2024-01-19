@@ -92,7 +92,7 @@
         margin-right: 3rem;
         margin-left: 1rem;
         border: 3px solid rgb(132, 0, 255);
-        object-fit: cover;
+        object-fit: fill;
         object-position: center;
     }
 
@@ -131,5 +131,16 @@
 
     &__save {
         opacity: 1;
+    }
+}
+
+@media only screen and (max-width: 600px){
+    .create-user{
+        &__form{
+            flex-direction: column;
+        }
+        &__user-img{
+            margin-right: 0;
+        }
     }
 }

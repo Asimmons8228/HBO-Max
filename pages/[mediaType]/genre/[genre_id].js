@@ -54,6 +54,8 @@ export default function MediaTypePage(props) {
           type="single"
           location="In theaters and on HBO MAX. Streaming through May 23."
           linkUrl={`/${props.query.mediaType}/${props.featuredData.id}`}
+          mediaType={props.query.mediaType}
+          mediaId={props.featuredData.id}
         />
         <GenreNav mediaType={props.query.mediaType} genresData={props.genresData} />
         {showRandomMedia()}

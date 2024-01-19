@@ -19,8 +19,8 @@ const Header = (props) =>{
             <div className="top-header__logo"></div>
             </Link>
             <div className="top-header__account" onClick={ () => globalState.setAccountOpen(!globalState.accountOpen)}>
-                <img className="top-header__user-img" src="https://mighty.tools/mockmind-api/content/human/46.jpg" width={60}/>
-                <div className="top-header__user-name">Rajiv</div>
+                <img className="top-header__user-img" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" width={60}/>
+                <div className="top-header__user-name"></div>
             </div>
             <Account />
             <SearchModal />
